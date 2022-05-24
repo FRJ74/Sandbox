@@ -31,7 +31,7 @@ let questions = [
    {
        question: "Roughly how long does it take for the sun's light to reach Earth - 8 minutes, 8 hours or 8 days?",
        answers: [
-           {option: "8 hours" , “8 days”, answer: false},
+           {option: "I don't know",  answer: false},
            {option: "8 minutes", answer: true},
        ]
    }
