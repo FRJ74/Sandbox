@@ -161,3 +161,12 @@ function beginQuiz() {
   
     nextBtn.classList.remove("hide");
  } 
+ /** Creating the submit button, which will hide all elements except the restart button and score. It will also add a congratulatory message to our page. */
+ function submit() {
+    prevBtn.classList.add("hide");
+    nextBtn.classList.add("hide");
+    submitBtn.classList.add("hide");
+    trueBtn.classList.add("hide");
+    falseBtn.classList.add("hide");   
+    questionText.innerHTML ="Congratulations on submitting the Quiz!"
+ }
