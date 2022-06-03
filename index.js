@@ -77,3 +77,15 @@ function beginQuiz() {
  }
   
  beginQuiz(); 
+ /* Create a function restart() that will reset the score, the current question index and remove the hide class from elements if added to them and call beginQuiz(). */
+ function restart() {
+    currentQuestion = 0;
+    prevBtn.classList.remove("hide");
+    nextBtn.classList.remove("hide");
+    submitBtn.classList.remove("hide");
+    trueBtn.classList.remove("hide");
+    falseBtn.classList.remove("hide");
+    score = 0;
+    userScore.innerHTML = score;
+    beginQuiz();
+ }
