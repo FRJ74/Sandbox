@@ -18,13 +18,13 @@ let questions = [
        question: "What is the hardest natural substance on Earth?",
        answers: [
            {option: "Diamond", answer: true},
-           {option: "I don’t know.", answer: false},
+           {option: "I don't know.", answer: false},
        ]
    },
    {
        question: "Which is the main gas that makes up the Earth's atmosphere?",
        answers: [
-           {option: "I don’t know", answer: false},
+           {option: "I don't know", answer: false},
            {option: "Nitrogen", answer: true},
        ]
    },
@@ -36,3 +36,44 @@ let questions = [
        ]
    }
 ]
+/* Adding onclick events to the button. This will call respective functions when a particular button is clicked.*/
+restartBtn.addEventListener("click", restart);
+prevBtn.addEventListener("click", prev);
+nextBtn.addEventListener("click",next);
+submitBtn.addEventListener("click",submit);
+/*Creating a function beginQuiz() that will get executed when the page loads and the script gets executed. 
+Also added a feature that will allow the page to jump to the next question once an option is selected from the list of answer options.*/
+function beginQuiz() {
+    currentQuestion = 0;
+    totalScore.innerHTML = questions.length;
+    questionText.innerHTML = questions[currentQuestion].question;
+    trueBtn.innerHTML = questions[currentQuestion].answers[0].option;
+    trueBtn.onclick = () => {
+        if(questions[currentQuestion].answers[0].answer) {
+            if(score < 3) {
+                score++;
+            }
+        }
+        userScore.innerHTML = score;
+        if(currentQuestion < 2) {
+            next();
+        }
+    }
+  
+    falseBtn.innerHTML = questions[currentQuestion].answers[1].option;
+    falseBtn.onclick = () => {
+        if(questions[currentQuestion].answers[1].answer) {
+            if(score < 3) {
+                score++;
+            }
+        }
+        userScore.innerHTML = score;
+        if(currentQuestion < 2) {
+            next();
+        }
+    }
+  
+    prevBtn.classList.add("hide");
+ }
+  
+ beginQuiz(); 
