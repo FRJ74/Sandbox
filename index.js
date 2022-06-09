@@ -169,4 +169,4 @@ function beginQuiz() {
     trueBtn.classList.add("hide");
     falseBtn.classList.add("hide");   
     questionText.innerHTML ="Congratulations on submitting the Quiz!"
- };
+ }
